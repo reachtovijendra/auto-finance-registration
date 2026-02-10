@@ -7,26 +7,20 @@
   text-align: center;
 }
 
-.welcome-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, var(--aca-navy) 0%, var(--aca-navy-light) 100%);
-  color: var(--aca-white);
-  margin-bottom: 1.25rem;
-  box-shadow: 0 4px 12px rgba(0, 40, 85, 0.25);
+/* Banner image at top of welcome content */
+.welcome-image-wrapper {
+  margin: -1.5rem -1.5rem 1rem -1.5rem;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+  max-height: 150px;
+}
 
-  i {
-    font-size: 1.5rem;
-  }
-
-  :host-context(.app-dark) & {
-    background: linear-gradient(135deg, var(--p-primary-color) 0%, #afc9ea 100%);
-    color: var(--aca-navy);
-  }
+.welcome-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
 }
 
 .welcome-greeting {
@@ -82,14 +76,14 @@
 }
 
 @media (max-width: 576px) {
-  .welcome-badge {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
+  .welcome-image-wrapper {
+    margin: -1.25rem -1rem 0.75rem -1rem;
+    border-radius: 12px 12px 0 0;
+    max-height: 110px;
+  }
 
-    i {
-      font-size: 1.25rem;
-    }
+  .welcome-image {
+    height: 110px;
   }
 
   .welcome-greeting {
@@ -98,5 +92,16 @@
 
   .welcome-message {
     font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .welcome-image-wrapper {
+    margin: -1rem -0.75rem 0.625rem -0.75rem;
+    max-height: 90px;
+  }
+
+  .welcome-image {
+    height: 90px;
   }
 }

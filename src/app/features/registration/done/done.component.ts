@@ -1,12 +1,10 @@
 import {
   Component,
   inject,
-  OnInit,
   AfterViewInit,
   PLATFORM_ID,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { RegistrationLayoutComponent } from '../../../shared/components/registration-layout/registration-layout.component';
 import confetti from 'canvas-confetti';
@@ -18,31 +16,13 @@ import confetti from 'canvas-confetti';
   templateUrl: './done.component.html',
   styleUrl: './done.component.scss',
 })
-export class DoneComponent implements OnInit, AfterViewInit {
-  private readonly route = inject(ActivatedRoute);
+export class DoneComponent implements AfterViewInit {
   private readonly platformId = inject(PLATFORM_ID);
-
-  email: string = '';
-
-  ngOnInit(): void {
-    // Hardcoded for now. In the future, this will come from the registration state.
-    this.email = 'john.doe@email.com';
-  }
 
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       this.launchConfetti();
     }
-  }
-
-  get maskedEmail(): string {
-    const [localPart, domain] = this.email.split('@');
-    if (!domain || localPart.length <= 2) {
-      return this.email;
-    }
-    const visible = localPart.slice(0, 2);
-    const masked = '*'.repeat(Math.min(localPart.length - 2, 6));
-    return `${visible}${masked}@${domain}`;
   }
 
   onLogin(): void {

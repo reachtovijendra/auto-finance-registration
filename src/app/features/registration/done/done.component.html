@@ -1,32 +1,24 @@
-<app-registration-layout [currentStep]="5">
+<app-registration-layout [currentStep]="4" [totalSteps]="4">
   <div class="done-content">
     <div class="done-badge">
       <i class="pi pi-check-circle"></i>
     </div>
     <h1 class="done-title">You're All Set!</h1>
-    <p class="done-message">
-      Congratulations -- your account has been successfully created.
-      You're ready to manage your auto loan anytime, anywhere.
-    </p>
 
-    <!-- Email verification notice -->
-    <div class="email-notice">
-      <div class="email-notice-icon">
-        <i class="pi pi-envelope"></i>
-      </div>
-      <div class="email-notice-content">
-        <span class="email-notice-title">Verify Your Email</span>
-        <p class="email-notice-text">
-          We've sent a confirmation email to
-          <strong>{{ maskedEmail }}</strong>.
-          Please check your inbox and click the verification link to activate your account.
-        </p>
-        <span class="email-notice-hint">
-          <i class="pi pi-info-circle"></i>
-          Didn't receive it? Check your spam folder or contact support.
-        </span>
-      </div>
-    </div>
+    <ul class="done-features">
+      <li>
+        <i class="pi pi-check-circle"></i>
+        <span>Make Payments</span>
+      </li>
+      <li>
+        <i class="pi pi-check-circle"></i>
+        <span>Set up Autopay</span>
+      </li>
+      <li>
+        <i class="pi pi-check-circle"></i>
+        <span>Enroll for Paperless Statements</span>
+      </li>
+    </ul>
   </div>
 
   <div actions class="done-actions">

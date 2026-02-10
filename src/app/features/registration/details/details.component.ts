@@ -31,17 +31,30 @@ export class DetailsComponent implements OnInit, AfterViewInit {
   /** Password entered by the user */
   password: string = '';
 
+  /** Whether the API had an email on file for this account */
+  emailOnFile: boolean = false;
+
   ngOnInit(): void {
     // In the future, this will be fetched from the API using the accountNumber query param.
-    // For now, hardcode a static email address.
-    this.email = 'john.doe@email.com';
+    // Simulate: API returned an email for this account.
+    // Set to false to simulate a customer with no email on file.
+    const apiEmail = 'john.doe@email.com'; // Replace with API call result (or empty string if none)
+
+    if (apiEmail) {
+      this.email = apiEmail;
+      this.emailOnFile = true;
+    } else {
+      this.email = '';
+      this.emailOnFile = false;
+    }
   }
 
   ngAfterViewInit(): void {
     setTimeout(() => {
-      const passwordInput = document.getElementById('password');
-      if (passwordInput) {
-        passwordInput.focus();
+      const focusTarget = this.emailOnFile ? 'password' : 'email';
+      const el = document.getElementById(focusTarget);
+      if (el) {
+        el.focus();
       }
     });
   }
@@ -55,9 +68,11 @@ export class DetailsComponent implements OnInit, AfterViewInit {
       return;
     }
 
+    // Merge emailOnFile flag into existing query params
+    const currentParams = this.route.snapshot.queryParams;
     this.router.navigate(['../review'], {
       relativeTo: this.route,
-      queryParamsHandling: 'preserve',
+      queryParams: { ...currentParams, emailOnFile: this.emailOnFile },
     });
   }
 

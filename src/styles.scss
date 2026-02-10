@@ -116,15 +116,3 @@ a {
   background: var(--p-surface-500);
 }
 
-/* PrimeNG toolbar override for header */
-.app-header-toolbar.p-toolbar {
-  border-radius: 0;
-  border: none;
-  padding: 0.625rem 1.5rem;
-  background: var(--aca-navy);
-  color: var(--aca-white);
-
-  @media (max-width: 576px) {
-    padding: 0.5rem 1rem;
-  }
-}

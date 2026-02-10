@@ -13,7 +13,7 @@
 /* Navy blue hero banner at top */
 .registration-hero {
   background: linear-gradient(135deg, var(--aca-navy) 0%, var(--aca-navy-light) 50%, var(--aca-navy) 100%);
-  height: 220px;
+  height: 180px;
   flex-shrink: 0;
   position: relative;
   overflow: hidden;
@@ -34,13 +34,99 @@
     radial-gradient(circle at 60% 80%, rgba(255, 255, 255, 0.15) 0%, transparent 45%);
 }
 
+/* Subtle road line across the bottom of the hero */
+.hero-road {
+  position: absolute;
+  bottom: 32px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.25) 0px,
+    rgba(255, 255, 255, 0.25) 24px,
+    transparent 24px,
+    transparent 48px
+  );
+}
+
+/* Car silhouettes on hero */
+.hero-car-silhouette {
+  position: absolute;
+  bottom: 18px;
+  width: 200px;
+  height: auto;
+  color: rgba(255, 255, 255, 0.15);
+  pointer-events: none;
+
+  svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.hero-car-right {
+  right: 6%;
+}
+
+.hero-car-left {
+  left: 6%;
+  transform: scaleX(-1);
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .hero-car-silhouette {
+    width: 140px;
+    bottom: 14px;
+  }
+
+  .hero-car-right {
+    right: 3%;
+  }
+
+  .hero-car-left {
+    left: 3%;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-car-silhouette {
+    width: 100px;
+    bottom: 12px;
+  }
+
+  .hero-car-right {
+    right: 2%;
+  }
+
+  .hero-car-left {
+    display: none;
+  }
+
+  .hero-road {
+    bottom: 26px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-car-silhouette {
+    display: none;
+  }
+
+  .hero-road {
+    display: none;
+  }
+}
+
 /* Card wrapper - positions card to overlap the hero */
 .registration-card-wrapper {
   flex: 1;
   display: flex;
   justify-content: center;
-  padding: 0 1rem 2rem;
-  margin-top: -140px;
+  padding: 0 1rem 1rem;
+  margin-top: -150px;
   position: relative;
   z-index: 1;
 }
@@ -50,7 +136,7 @@
   max-width: 520px;
   background: var(--p-content-background);
   border-radius: 16px;
-  padding: 2rem 2rem 1.75rem;
+  padding: 1.5rem 1.5rem 1rem;
   box-shadow:
     0 10px 40px -10px rgba(0, 40, 85, 0.2),
     0 4px 12px -2px rgba(0, 0, 0, 0.08);
@@ -64,16 +150,32 @@
   }
 }
 
+/* Banner image at top of card */
+.card-banner {
+  margin: -1.5rem -1.5rem 0 -1.5rem;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+  max-height: 100px;
+}
+
+.card-banner-image {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+}
+
 .registration-steps {
-  margin-bottom: 1.75rem;
+  margin: 0.5rem 0 0.75rem 0;
 }
 
 .registration-content {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .registration-terms {
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
 
   &:empty {
     display: none;
@@ -81,7 +183,7 @@
 }
 
 .registration-actions {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 
   &:empty {
     display: none;
@@ -92,7 +194,7 @@
   text-align: center;
   font-size: 0.75rem;
   color: var(--p-text-muted-color);
-  padding-top: 0.75rem;
+  padding-top: 0.5rem;
   border-top: 1px solid var(--p-content-border-color);
 
   &:empty {
@@ -103,43 +205,62 @@
 /* Tablet */
 @media (max-width: 768px) {
   .registration-hero {
-    height: 180px;
+    height: 160px;
   }
 
   .registration-card-wrapper {
-    margin-top: -110px;
+    margin-top: -130px;
   }
 }
 
 /* Mobile */
 @media (max-width: 576px) {
   .registration-hero {
-    height: 150px;
+    height: 130px;
   }
 
   .registration-card-wrapper {
-    margin-top: -90px;
+    margin-top: -100px;
     padding: 0 0.75rem 1.5rem;
   }
 
   .registration-container {
-    padding: 1.5rem 1.25rem 1.25rem;
+    padding: 1.25rem 1rem 1rem;
     border-radius: 12px;
+  }
+
+  .card-banner {
+    margin: -1.25rem -1rem 0 -1rem;
+    border-radius: 12px 12px 0 0;
+    max-height: 80px;
+  }
+
+  .card-banner-image {
+    height: 80px;
   }
 }
 
 /* Very small phones */
 @media (max-width: 360px) {
   .registration-hero {
-    height: 130px;
+    height: 110px;
   }
 
   .registration-card-wrapper {
-    margin-top: -80px;
-    padding: 0 0.5rem 1rem;
+    margin-top: -85px;
+    padding: 0 0.5rem 0.75rem;
   }
 
   .registration-container {
-    padding: 1.25rem 1rem 1rem;
+    padding: 1rem 0.75rem 0.75rem;
+  }
+
+  .card-banner {
+    margin: -1rem -0.75rem 0 -0.75rem;
+    max-height: 70px;
+  }
+
+  .card-banner-image {
+    height: 70px;
   }
 }

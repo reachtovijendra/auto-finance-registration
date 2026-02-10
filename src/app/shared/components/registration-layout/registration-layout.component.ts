@@ -10,4 +10,6 @@ import { StepIndicatorComponent } from '../step-indicator/step-indicator.compone
 })
 export class RegistrationLayoutComponent {
   readonly currentStep = input<number>(1);
+  readonly totalSteps = input<number>(4);
+  readonly showProgress = input<boolean>(true);
 }

@@ -1,11 +1,14 @@
-<app-registration-layout [currentStep]="3">
+<app-registration-layout [currentStep]="2" [totalSteps]="4">
   <div class="details-content">
-    <div class="details-badge">
-      <i class="pi pi-user"></i>
-    </div>
-    <p class="details-description">
-      Confirm your email and create a password for your account.
-    </p>
+    @if (emailOnFile) {
+      <p class="details-description">
+        Confirm your email and create a password for your account.
+      </p>
+    } @else {
+      <p class="details-description">
+        Enter your email address and create a password for your account.
+      </p>
+    }
 
     <div class="details-form">
       <div class="form-field">
@@ -22,7 +25,11 @@
         </p-floatlabel>
         <small class="field-hint">
           <i class="pi pi-info-circle"></i>
-          Pre-filled from your account. You may update it if needed.
+          @if (emailOnFile) {
+            Pre-filled from your account. You may update it if needed.
+          } @else {
+            Please enter the email address you'd like to use for your account.
+          }
         </small>
       </div>
 

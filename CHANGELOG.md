@@ -30,16 +30,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Currency formatting for account balance using Angular CurrencyPipe
 - Navigation from Details to Review screen on form submission
 - Back navigation from Review to Details
-- Done screen (Screen 5 of 5) with success message, confetti celebration animation, email verification notice, and login button
+- Done screen (Screen 5 of 5) with success message, confetti celebration animation, and login button
 - canvas-confetti library for celebratory confetti burst on registration completion
-- Masked email display on Done screen for privacy
 - Navigation from Review to Done screen on account confirmation
 - Navigation flow from Welcome to Verify with query parameter preservation
 - Back navigation from Verify to Welcome
 - Global styles with Inter font, responsive typography, and smooth dark/light mode transitions
 - Environment configuration files for development and default environments
+- Conditional email verification on Done screen: verification notice is only shown when the API had no email on file for the customer
+- `emailOnFile` flag tracked on Details screen and passed as a query parameter through Review to Done
+- Dynamic hint text on Details screen: "Pre-filled from your account" when email exists, "Please enter the email address you'd like to use" when not
+- Auto-focus targets email field when no email is on file, password field when email is pre-filled
+- Done screen feature checklist with check-circle icons: Make Payments, Set up Autopay, Enroll for Paperless Statements
+
+### Removed
+- Done screen: Removed congratulations message text, email verification notice, and all related logic (email, maskedEmail, showEmailVerification)
+- Badge icons (car, shield, user) from Welcome, Verify, and Details screens to reduce visual redundancy with the step indicator
+- IMAGIN.studio dynamic vehicle image integration from Review screen (reverted due to watermark on free tier)
+- Welcome screen illustration with orbiting icons and feature highlight tiles (reverted due to visual clutter)
 
 ### Changed
+- Details screen description updates dynamically based on whether email was fetched from the API or needs to be entered by the user
+- Done screen replaced with feature checklist below the "You're All Set" heading
+- Review screen: "Your Role" moved inline next to Account Number row; Account Balance/Interest Rate row moved above Email Address row; standalone Role row removed
+- Step indicator replaced with a simple "Step X of Y" progress bar that fills with ACA navy as the user advances
+- Progress bar hidden on the Welcome screen; starts on the Verify screen (Step 1 of 4) through Done (Step 4 of 4)
+- Registration layout component updated with `showProgress` and `totalSteps` inputs for flexible progress bar control
 - Complete visual redesign of registration UI with ACA brand identity
 - Added navy blue hero banner with gradient background and subtle geometric pattern overlay
 - Registration card now overlaps the hero banner for a modern, layered visual effect
@@ -49,7 +65,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - All screen badges redesigned with gradient navy-to-blue rounded squares replacing plain circles
 - "Terms & Conditions" link color changed to ACA red (`#C41230`) for visual emphasis
 - Vehicle hero card on Review screen uses navy gradient background
-- Email notice card on Done screen uses left-border accent in ACA navy
 - Done screen success badge uses green gradient with box shadow
 - Confetti animation now uses ACA brand colors: navy, red, white, blue, and gold
 - Dark mode fully updated for all new design elements including hero banner, badges, and accent colors

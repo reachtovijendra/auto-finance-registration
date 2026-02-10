@@ -7,28 +7,6 @@
   text-align: center;
 }
 
-.details-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, var(--aca-navy) 0%, var(--aca-navy-light) 100%);
-  color: var(--aca-white);
-  margin-bottom: 1.25rem;
-  box-shadow: 0 4px 12px rgba(0, 40, 85, 0.25);
-
-  i {
-    font-size: 1.5rem;
-  }
-
-  :host-context(.app-dark) & {
-    background: linear-gradient(135deg, var(--p-primary-color) 0%, #afc9ea 100%);
-    color: var(--aca-navy);
-  }
-}
-
 .details-description {
   font-size: 0.9375rem;
   color: var(--p-text-muted-color);
@@ -68,14 +46,3 @@
   gap: 0.5rem;
 }
 
-@media (max-width: 576px) {
-  .details-badge {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-
-    i {
-      font-size: 1.25rem;
-    }
-  }
-}

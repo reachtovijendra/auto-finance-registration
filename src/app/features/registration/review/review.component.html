@@ -1,4 +1,4 @@
-<app-registration-layout [currentStep]="4">
+<app-registration-layout [currentStep]="3" [totalSteps]="4">
   <div class="review-content">
     <p class="review-description">
       Please confirm everything looks correct before completing your setup.
@@ -18,7 +18,7 @@
     <!-- Info Sections -->
     <div class="review-sections">
 
-      <!-- Account Section -->
+      <!-- Account Number & Role Section -->
       <div class="review-row">
         <div class="review-row-icon">
           <i class="pi pi-id-card"></i>
@@ -27,18 +27,15 @@
           <span class="review-label">Account Number</span>
           <span class="review-value">{{ maskedAccount }}</span>
         </div>
-      </div>
-
-      <p-divider />
-
-      <!-- Email Section -->
-      <div class="review-row">
-        <div class="review-row-icon">
-          <i class="pi pi-envelope"></i>
-        </div>
-        <div class="review-row-content">
-          <span class="review-label">Email Address</span>
-          <span class="review-value">{{ account.email }}</span>
+        <div class="review-row-secondary">
+          <span class="review-label">Your Role</span>
+          <span class="review-value">
+            <p-tag
+              [value]="account.customerRole"
+              [severity]="account.customerRole === 'Borrower' ? 'info' : 'warn'"
+              [rounded]="true"
+            />
+          </span>
         </div>
       </div>
 
@@ -61,20 +58,14 @@
 
       <p-divider />
 
-      <!-- Customer Role Section -->
+      <!-- Email Section -->
       <div class="review-row">
         <div class="review-row-icon">
-          <i class="pi pi-user"></i>
+          <i class="pi pi-envelope"></i>
         </div>
         <div class="review-row-content">
-          <span class="review-label">Your Role</span>
-          <span class="review-value">
-            <p-tag
-              [value]="account.customerRole"
-              [severity]="account.customerRole === 'Borrower' ? 'info' : 'warn'"
-              [rounded]="true"
-            />
-          </span>
+          <span class="review-label">Email Address</span>
+          <span class="review-value">{{ account.email }}</span>
         </div>
       </div>
 

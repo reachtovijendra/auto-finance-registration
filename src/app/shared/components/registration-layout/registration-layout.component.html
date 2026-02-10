@@ -1,15 +1,65 @@
 <div class="registration-page">
-  <!-- Navy hero banner -->
+  <!-- Navy hero banner with automotive motif -->
   <div class="registration-hero">
     <div class="hero-pattern"></div>
+    <div class="hero-road"></div>
+    <div class="hero-car-silhouette hero-car-left" aria-hidden="true">
+      <svg viewBox="0 0 260 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Car body -->
+        <path d="M40 55 L55 30 Q58 25 65 25 L155 25 Q162 25 165 30 L185 55 Z" fill="currentColor"/>
+        <!-- Car base -->
+        <rect x="30" y="55" width="170" height="18" rx="4" fill="currentColor"/>
+        <!-- Windshield -->
+        <path d="M62 30 L72 48 L138 48 L152 30 Z" fill="rgba(255,255,255,0.15)"/>
+        <!-- Front wheel -->
+        <circle cx="70" cy="73" r="14" fill="rgba(0,10,30,0.6)"/>
+        <circle cx="70" cy="73" r="8" fill="currentColor"/>
+        <circle cx="70" cy="73" r="3" fill="rgba(0,10,30,0.6)"/>
+        <!-- Rear wheel -->
+        <circle cx="165" cy="73" r="14" fill="rgba(0,10,30,0.6)"/>
+        <circle cx="165" cy="73" r="8" fill="currentColor"/>
+        <circle cx="165" cy="73" r="3" fill="rgba(0,10,30,0.6)"/>
+        <!-- Headlight -->
+        <rect x="186" y="57" width="8" height="6" rx="2" fill="rgba(255,255,255,0.3)"/>
+        <!-- Tail light -->
+        <rect x="30" y="57" width="6" height="5" rx="1.5" fill="rgba(196,18,48,0.5)"/>
+      </svg>
+    </div>
+    <div class="hero-car-silhouette hero-car-right" aria-hidden="true">
+      <svg viewBox="0 0 260 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Car body -->
+        <path d="M40 55 L55 30 Q58 25 65 25 L155 25 Q162 25 165 30 L185 55 Z" fill="currentColor"/>
+        <!-- Car base -->
+        <rect x="30" y="55" width="170" height="18" rx="4" fill="currentColor"/>
+        <!-- Windshield -->
+        <path d="M62 30 L72 48 L138 48 L152 30 Z" fill="rgba(255,255,255,0.15)"/>
+        <!-- Front wheel -->
+        <circle cx="70" cy="73" r="14" fill="rgba(0,10,30,0.6)"/>
+        <circle cx="70" cy="73" r="8" fill="currentColor"/>
+        <circle cx="70" cy="73" r="3" fill="rgba(0,10,30,0.6)"/>
+        <!-- Rear wheel -->
+        <circle cx="165" cy="73" r="14" fill="rgba(0,10,30,0.6)"/>
+        <circle cx="165" cy="73" r="8" fill="currentColor"/>
+        <circle cx="165" cy="73" r="3" fill="rgba(0,10,30,0.6)"/>
+        <!-- Headlight -->
+        <rect x="186" y="57" width="8" height="6" rx="2" fill="rgba(255,255,255,0.3)"/>
+        <!-- Tail light -->
+        <rect x="30" y="57" width="6" height="5" rx="1.5" fill="rgba(196,18,48,0.5)"/>
+      </svg>
+    </div>
   </div>
 
   <!-- Card overlapping the hero -->
   <div class="registration-card-wrapper">
     <div class="registration-container">
-      <div class="registration-steps">
-        <app-step-indicator [currentStep]="currentStep()" />
-      </div>
+      @if (showProgress()) {
+        <div class="card-banner">
+          <img src="/handshake.png" alt="" class="card-banner-image" />
+        </div>
+        <div class="registration-steps">
+          <app-step-indicator [currentStep]="currentStep()" [totalSteps]="totalSteps()" />
+        </div>
+      }
       <div class="registration-content">
         <ng-content />
       </div>

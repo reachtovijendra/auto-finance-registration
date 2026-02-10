@@ -1,14 +1,15 @@
-<app-registration-layout [currentStep]="1">
+<app-registration-layout [currentStep]="1" [showProgress]="false">
   <div class="welcome-hero">
-    <div class="welcome-badge">
-      <i class="pi pi-car"></i>
+    <div class="welcome-image-wrapper">
+      <img src="/handshake.png" alt="Welcome" class="welcome-image" />
     </div>
+
     <h1 class="welcome-greeting">Hi {{ firstName() }},</h1>
     <p class="welcome-message">
       Congratulations on the purchase of your vehicle.
     </p>
     <p class="welcome-submessage">
-      Let's get you set up. This should take only a few minutes!
+      Let's get you set up!
     </p>
   </div>
 
