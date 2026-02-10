@@ -1,8 +1,25 @@
 <app-registration-layout [currentStep]="1">
   <div class="welcome-hero">
-    <div class="welcome-badge">
-      <i class="pi pi-car"></i>
+    <!-- Auto-finance illustration -->
+    <div class="welcome-illustration">
+      <div class="illustration-circle">
+        <div class="illustration-inner">
+          <i class="pi pi-car"></i>
+        </div>
+      </div>
+      <div class="illustration-orbit">
+        <div class="orbit-item orbit-item-1">
+          <i class="pi pi-shield"></i>
+        </div>
+        <div class="orbit-item orbit-item-2">
+          <i class="pi pi-wallet"></i>
+        </div>
+        <div class="orbit-item orbit-item-3">
+          <i class="pi pi-file"></i>
+        </div>
+      </div>
     </div>
+
     <h1 class="welcome-greeting">Hi {{ firstName() }},</h1>
     <p class="welcome-message">
       Congratulations on the purchase of your vehicle.
@@ -10,6 +27,22 @@
     <p class="welcome-submessage">
       Let's get you set up. This should take only a few minutes!
     </p>
+
+    <!-- Feature highlights -->
+    <div class="welcome-features">
+      <div class="feature-item">
+        <i class="pi pi-wallet"></i>
+        <span>Manage Payments</span>
+      </div>
+      <div class="feature-item">
+        <i class="pi pi-chart-line"></i>
+        <span>Track Balance</span>
+      </div>
+      <div class="feature-item">
+        <i class="pi pi-file"></i>
+        <span>View Statements</span>
+      </div>
+    </div>
   </div>
 
   <div terms class="terms-section">

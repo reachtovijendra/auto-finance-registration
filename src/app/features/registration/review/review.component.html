@@ -4,14 +4,33 @@
       Please confirm everything looks correct before completing your setup.
     </p>
 
-    <!-- Vehicle Hero Card -->
+    <!-- Vehicle Hero Card with Dynamic Image -->
     <div class="vehicle-card">
-      <div class="vehicle-card-icon">
-        <i class="pi pi-car"></i>
+      <div class="vehicle-card-header">
+        <div class="vehicle-card-icon">
+          <i class="pi pi-car"></i>
+        </div>
+        <div class="vehicle-card-info">
+          <span class="vehicle-name">{{ vehicleDisplay }}</span>
+          <span class="vehicle-label">Your Vehicle</span>
+        </div>
       </div>
-      <div class="vehicle-card-info">
-        <span class="vehicle-name">{{ vehicleDisplay }}</span>
-        <span class="vehicle-label">Your Vehicle</span>
+      <!-- Dynamic vehicle photo from IMAGIN.studio CDN -->
+      <div class="vehicle-image-container">
+        <img
+          [src]="vehicleImageUrl"
+          [alt]="vehicleDisplay"
+          class="vehicle-image"
+          [class.loaded]="vehicleImageLoaded"
+          (load)="onVehicleImageLoad()"
+          (error)="onVehicleImageError()"
+          loading="eager"
+        />
+        @if (!vehicleImageLoaded && !vehicleImageError) {
+          <div class="vehicle-image-placeholder">
+            <i class="pi pi-spin pi-spinner"></i>
+          </div>
+        }
       </div>
     </div>
 

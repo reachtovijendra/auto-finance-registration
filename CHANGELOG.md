@@ -39,6 +39,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Global styles with Inter font, responsive typography, and smooth dark/light mode transitions
 - Environment configuration files for development and default environments
 
+- Dynamic vehicle photo on Review screen using IMAGIN.studio CDN API, showing the actual vehicle image based on make, model, and year
+- Vehicle image loads with spinner placeholder and smooth fade-in transition; graceful fallback on load error
+- Welcome screen illustration with orbiting feature icons (shield, wallet, file) around a central car icon
+- Welcome screen feature highlight tiles: Manage Payments, Track Balance, View Statements
+
 ### Changed
 - Complete visual redesign of registration UI with ACA brand identity
 - Added navy blue hero banner with gradient background and subtle geometric pattern overlay
