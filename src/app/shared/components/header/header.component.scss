@@ -1,0 +1,31 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.app-logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.app-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+
+  @media (max-width: 576px) {
+    height: 32px;
+  }
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.theme-icon {
+  font-size: 1rem;
+  color: var(--p-text-muted-color);
+}

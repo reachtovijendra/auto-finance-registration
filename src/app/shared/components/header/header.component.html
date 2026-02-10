@@ -1,0 +1,18 @@
+<p-toolbar styleClass="app-header-toolbar">
+  <ng-template #start>
+    <a href="/" class="app-logo-link" aria-label="American Credit Acceptance Home">
+      <img
+        src="https://americancreditacceptance.com/wp-content/uploads/2020/02/american-credit-logo.png"
+        alt="American Credit Acceptance"
+        class="app-logo"
+      />
+    </a>
+  </ng-template>
+  <ng-template #end>
+    <div class="theme-toggle">
+      <i class="pi pi-sun theme-icon"></i>
+      <p-toggleswitch [(ngModel)]="isDark" />
+      <i class="pi pi-moon theme-icon"></i>
+    </div>
+  </ng-template>
+</p-toolbar>

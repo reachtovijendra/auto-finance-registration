@@ -1,0 +1,59 @@
+<app-registration-layout [currentStep]="3">
+  <div class="details-content">
+    <p class="details-description">
+      Confirm your email and create a password for your account.
+    </p>
+
+    <div class="details-form">
+      <div class="form-field">
+        <p-floatlabel variant="on">
+          <input
+            id="email"
+            type="email"
+            pInputText
+            [(ngModel)]="email"
+            [fluid]="true"
+            pSize="large"
+          />
+          <label for="email">Email Address</label>
+        </p-floatlabel>
+        <small class="field-hint">
+          <i class="pi pi-info-circle"></i>
+          Pre-filled from your account. You may update it if needed.
+        </small>
+      </div>
+
+      <div class="form-field">
+        <p-floatlabel variant="on">
+          <p-password
+            inputId="password"
+            [(ngModel)]="password"
+            [feedback]="false"
+            [toggleMask]="true"
+            [fluid]="true"
+            placeholder=" "
+            autocomplete="new-password"
+            size="large"
+          />
+          <label for="password">Set Password</label>
+        </p-floatlabel>
+      </div>
+    </div>
+  </div>
+
+  <div actions class="details-actions">
+    <p-button
+      label="Continue"
+      icon="pi pi-arrow-right"
+      iconPos="right"
+      (onClick)="onContinue()"
+      [style]="{ width: '100%' }"
+      [disabled]="!isValid"
+      size="large"
+    />
+  </div>
+
+  <p footer>
+    Your information is encrypted and secure.
+  </p>
+</app-registration-layout>

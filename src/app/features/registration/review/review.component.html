@@ -1,0 +1,98 @@
+<app-registration-layout [currentStep]="4">
+  <div class="review-content">
+    <p class="review-description">
+      Please confirm everything looks correct before completing your setup.
+    </p>
+
+    <!-- Vehicle Hero Card -->
+    <div class="vehicle-card">
+      <div class="vehicle-card-icon">
+        <i class="pi pi-car"></i>
+      </div>
+      <div class="vehicle-card-info">
+        <span class="vehicle-name">{{ vehicleDisplay }}</span>
+        <span class="vehicle-label">Your Vehicle</span>
+      </div>
+    </div>
+
+    <!-- Info Sections -->
+    <div class="review-sections">
+
+      <!-- Account Section -->
+      <div class="review-row">
+        <div class="review-row-icon">
+          <i class="pi pi-id-card"></i>
+        </div>
+        <div class="review-row-content">
+          <span class="review-label">Account Number</span>
+          <span class="review-value">{{ maskedAccount }}</span>
+        </div>
+      </div>
+
+      <p-divider />
+
+      <!-- Email Section -->
+      <div class="review-row">
+        <div class="review-row-icon">
+          <i class="pi pi-envelope"></i>
+        </div>
+        <div class="review-row-content">
+          <span class="review-label">Email Address</span>
+          <span class="review-value">{{ account.email }}</span>
+        </div>
+      </div>
+
+      <p-divider />
+
+      <!-- Balance & Rate Section -->
+      <div class="review-row">
+        <div class="review-row-icon">
+          <i class="pi pi-dollar"></i>
+        </div>
+        <div class="review-row-content">
+          <span class="review-label">Account Balance</span>
+          <span class="review-value review-value-highlight">{{ account.accountBalance | currency:'USD':'symbol':'1.2-2' }}</span>
+        </div>
+        <div class="review-row-secondary">
+          <span class="review-label">Interest Rate</span>
+          <span class="review-value">{{ account.interestRate }}% APR</span>
+        </div>
+      </div>
+
+      <p-divider />
+
+      <!-- Customer Role Section -->
+      <div class="review-row">
+        <div class="review-row-icon">
+          <i class="pi pi-user"></i>
+        </div>
+        <div class="review-row-content">
+          <span class="review-label">Your Role</span>
+          <span class="review-value">
+            <p-tag
+              [value]="account.customerRole"
+              [severity]="account.customerRole === 'Borrower' ? 'info' : 'warn'"
+              [rounded]="true"
+            />
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div actions class="review-actions">
+    <p-button
+      label="Confirm & Complete"
+      icon="pi pi-check"
+      iconPos="right"
+      (onClick)="onConfirm()"
+      [style]="{ width: '100%' }"
+      size="large"
+    />
+  </div>
+
+  <p footer>
+    Your information is encrypted and secure.
+  </p>
+</app-registration-layout>

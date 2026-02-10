@@ -1,0 +1,19 @@
+<div class="registration-page">
+  <div class="registration-container">
+    <div class="registration-steps">
+      <app-step-indicator [currentStep]="currentStep()" />
+    </div>
+    <div class="registration-content">
+      <ng-content />
+    </div>
+    <div class="registration-terms">
+      <ng-content select="[terms]" />
+    </div>
+    <div class="registration-actions">
+      <ng-content select="[actions]" />
+    </div>
+    <div class="registration-footer">
+      <ng-content select="[footer]" />
+    </div>
+  </div>
+</div>

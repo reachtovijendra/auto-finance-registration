@@ -1,0 +1,41 @@
+<app-registration-layout [currentStep]="2">
+  <div class="verify-content">
+    <p class="verify-description">
+      For your security, please enter the last 4 digits of your Social Security Number.
+    </p>
+
+    <div class="ssn-input-section">
+      <label class="ssn-label" for="ssn-input">Last 4 of SSN</label>
+      <div class="ssn-input-wrapper">
+        <p-inputotp
+          [(ngModel)]="ssnLastFour"
+          [length]="4"
+          [integerOnly]="true"
+          [mask]="true"
+          [invalid]="isInvalid()"
+          [autofocus]="true"
+          size="large"
+        />
+      </div>
+      @if (isInvalid()) {
+        <small class="ssn-error">{{ errorMessage() }}</small>
+      }
+    </div>
+  </div>
+
+  <div actions class="verify-actions">
+    <p-button
+      label="Verify"
+      icon="pi pi-arrow-right"
+      iconPos="right"
+      (onClick)="onVerify()"
+      [style]="{ width: '100%' }"
+      [disabled]="!isValid"
+      size="large"
+    />
+  </div>
+
+  <p footer>
+    Your information is encrypted and secure.
+  </p>
+</app-registration-layout>

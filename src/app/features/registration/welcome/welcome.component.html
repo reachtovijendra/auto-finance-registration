@@ -1,0 +1,45 @@
+<app-registration-layout [currentStep]="1">
+  <div class="welcome-hero">
+    <h1 class="welcome-greeting">Hi {{ firstName() }},</h1>
+    <p class="welcome-message">
+      Congratulations on the purchase of your vehicle.
+    </p>
+    <p class="welcome-submessage">
+      Let's get you set up. This should take only a few minutes!
+    </p>
+  </div>
+
+  <div terms class="terms-section">
+    <p-checkbox
+      [(ngModel)]="termsAccepted"
+      [binary]="true"
+      inputId="terms"
+    />
+    <label for="terms" class="terms-label">
+      I agree to the
+      <a
+        href="https://myloan.acacceptance.com/legal/terms-of-use"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="terms-link"
+        (click)="$event.stopPropagation()"
+      >Terms &amp; Conditions</a>
+    </label>
+  </div>
+
+  <div actions>
+    <p-button
+      label="Get Started"
+      icon="pi pi-arrow-right"
+      iconPos="right"
+      (onClick)="onGetStarted()"
+      [style]="{ width: '100%' }"
+      [disabled]="!termsAccepted"
+      size="large"
+    />
+  </div>
+
+  <p footer>
+    Your account setup is quick, easy, and secure.
+  </p>
+</app-registration-layout>

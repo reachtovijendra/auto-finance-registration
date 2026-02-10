@@ -1,0 +1,26 @@
+<div class="step-indicator">
+  @for (step of steps; track step.number; let last = $last) {
+    <div
+      class="step"
+      [ngClass]="{
+        active: step.number === currentStep(),
+        completed: step.number < currentStep()
+      }"
+    >
+      <span class="step-number">
+        @if (step.number < currentStep()) {
+          <i class="pi pi-check"></i>
+        } @else {
+          <i [class]="step.icon"></i>
+        }
+      </span>
+      <span class="step-label">{{ step.label }}</span>
+    </div>
+    @if (!last) {
+      <div
+        class="step-line"
+        [ngClass]="{ completed: step.number < currentStep() }"
+      ></div>
+    }
+  }
+</div>

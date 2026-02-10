@@ -1,0 +1,18 @@
+import { Routes } from '@angular/router';
+
+export const routes: Routes = [
+  {
+    path: 'registration',
+    loadChildren: () =>
+      import('./features/registration/registration.routes').then((m) => m.REGISTRATION_ROUTES),
+  },
+  {
+    path: '',
+    redirectTo: 'registration/welcome',
+    pathMatch: 'full',
+  },
+  {
+    path: '**',
+    redirectTo: 'registration/welcome',
+  },
+];
