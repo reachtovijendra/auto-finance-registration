@@ -57,32 +57,6 @@ export class ReviewComponent implements OnInit {
     return `${this.account.vehicleYear} ${this.account.vehicleMake} ${this.account.vehicleModel}`;
   }
 
-  /**
-   * Generates the IMAGIN.studio CDN URL for the vehicle image based on make, model, and year.
-   * Uses the free-tier 'demo' customer ID. In production, this should be replaced
-   * with a registered customer ID for higher resolution and usage limits.
-   */
-  get vehicleImageUrl(): string {
-    const make = encodeURIComponent(this.account.vehicleMake.toLowerCase());
-    const model = encodeURIComponent(this.account.vehicleModel.toLowerCase());
-    const year = this.account.vehicleYear;
-    return `https://cdn.imagin.studio/getImage?customer=hrjavascript-mastery&make=${make}&modelFamily=${model}&modelYear=${year}&angle=01&width=800&zoomType=fullscreen`;
-  }
-
-  /** Track whether the vehicle image loaded successfully */
-  vehicleImageLoaded = false;
-  vehicleImageError = false;
-
-  onVehicleImageLoad(): void {
-    this.vehicleImageLoaded = true;
-    this.vehicleImageError = false;
-  }
-
-  onVehicleImageError(): void {
-    this.vehicleImageError = true;
-    this.vehicleImageLoaded = false;
-  }
-
   get maskedAccount(): string {
     const acct = this.account.accountNumber;
     if (acct.length <= 4) return acct;
