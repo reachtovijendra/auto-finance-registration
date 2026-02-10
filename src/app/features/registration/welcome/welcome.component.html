@@ -1,5 +1,8 @@
 <app-registration-layout [currentStep]="1">
   <div class="welcome-hero">
+    <div class="welcome-badge">
+      <i class="pi pi-car"></i>
+    </div>
     <h1 class="welcome-greeting">Hi {{ firstName() }},</h1>
     <p class="welcome-message">
       Congratulations on the purchase of your vehicle.
@@ -36,6 +39,7 @@
       [style]="{ width: '100%' }"
       [disabled]="!termsAccepted"
       size="large"
+      styleClass="aca-btn-primary"
     />
   </div>
 

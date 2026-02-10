@@ -52,11 +52,15 @@ export class DoneComponent implements OnInit, AfterViewInit {
   }
 
   private launchConfetti(): void {
+    // ACA brand colors for confetti: navy, red, white, blue accent
+    const acaColors = ['#002855', '#C41230', '#ffffff', '#1157a7', '#c9a84c'];
+
     // Initial burst from center
     confetti({
       particleCount: 80,
       spread: 70,
       origin: { y: 0.6 },
+      colors: acaColors,
       disableForReducedMotion: true,
     });
 
@@ -67,6 +71,7 @@ export class DoneComponent implements OnInit, AfterViewInit {
         angle: 60,
         spread: 55,
         origin: { x: 0, y: 0.65 },
+        colors: acaColors,
         disableForReducedMotion: true,
       });
       confetti({
@@ -74,6 +79,7 @@ export class DoneComponent implements OnInit, AfterViewInit {
         angle: 120,
         spread: 55,
         origin: { x: 1, y: 0.65 },
+        colors: acaColors,
         disableForReducedMotion: true,
       });
     }, 300);

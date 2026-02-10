@@ -7,35 +7,33 @@
   text-align: center;
 }
 
-.verify-icon {
+.verify-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  background: var(--p-primary-color);
-  color: var(--p-primary-inverse-color);
-  margin-bottom: 1.5rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--aca-navy) 0%, var(--aca-navy-light) 100%);
+  color: var(--aca-white);
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 12px rgba(0, 40, 85, 0.25);
 
   i {
-    font-size: 2rem;
+    font-size: 1.5rem;
+  }
+
+  :host-context(.app-dark) & {
+    background: linear-gradient(135deg, var(--p-primary-color) 0%, #afc9ea 100%);
+    color: var(--aca-navy);
   }
 }
 
-.verify-title {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: var(--p-text-color);
-  margin: 0 0 0.75rem 0;
-  line-height: 1.3;
-}
-
 .verify-description {
-  font-size: 1rem;
+  font-size: 0.9375rem;
   color: var(--p-text-muted-color);
-  margin: 0 0 2rem 0;
-  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.5;
 }
 
 .ssn-input-section {
@@ -44,10 +42,12 @@
 
 .ssn-label {
   display: block;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   color: var(--p-text-color);
   margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .ssn-input-wrapper {
@@ -58,7 +58,7 @@
 
 .ssn-error {
   display: block;
-  color: var(--p-red-500);
+  color: var(--aca-red);
   font-size: 0.8125rem;
   margin-top: 0.5rem;
 }
@@ -70,16 +70,13 @@
 }
 
 @media (max-width: 576px) {
-  .verify-title {
-    font-size: 1.5rem;
-  }
-
-  .verify-icon {
-    width: 60px;
-    height: 60px;
+  .verify-badge {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
 
     i {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
     }
   }
 }

@@ -1,5 +1,8 @@
 <app-registration-layout [currentStep]="3">
   <div class="details-content">
+    <div class="details-badge">
+      <i class="pi pi-user"></i>
+    </div>
     <p class="details-description">
       Confirm your email and create a password for your account.
     </p>
@@ -50,6 +53,7 @@
       [style]="{ width: '100%' }"
       [disabled]="!isValid"
       size="large"
+      styleClass="aca-btn-primary"
     />
   </div>
 

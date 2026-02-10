@@ -1,8 +1,11 @@
 <app-registration-layout [currentStep]="5">
   <div class="done-content">
+    <div class="done-badge">
+      <i class="pi pi-check-circle"></i>
+    </div>
     <h1 class="done-title">You're All Set!</h1>
     <p class="done-message">
-      Congratulations — your account has been successfully created.
+      Congratulations -- your account has been successfully created.
       You're ready to manage your auto loan anytime, anywhere.
     </p>
 
@@ -34,6 +37,7 @@
       (onClick)="onLogin()"
       [style]="{ width: '100%' }"
       size="large"
+      styleClass="aca-btn-primary"
     />
   </div>
 

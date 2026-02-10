@@ -10,11 +10,11 @@ import { routes } from './app.routes';
 const AcaPreset = definePreset(Aura, {
   semantic: {
     primary: {
-      50: '{indigo.50}',
-      100: '{indigo.100}',
-      200: '{indigo.200}',
-      300: '{indigo.300}',
-      400: '{indigo.400}',
+      50: '#e6edf5',
+      100: '#b3c8de',
+      200: '#80a3c7',
+      300: '#4d7eb0',
+      400: '#1a5999',
       500: '#1157a7',
       600: '#002855',
       700: '#002048',

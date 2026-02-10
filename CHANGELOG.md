@@ -39,6 +39,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Global styles with Inter font, responsive typography, and smooth dark/light mode transitions
 - Environment configuration files for development and default environments
 
+### Changed
+- Complete visual redesign of registration UI with ACA brand identity
+- Added navy blue hero banner with gradient background and subtle geometric pattern overlay
+- Registration card now overlaps the hero banner for a modern, layered visual effect
+- Header redesigned with navy blue background and white-inverted ACA logo
+- ACA brand CSS custom properties added: `--aca-navy`, `--aca-red`, `--aca-blue-accent`, `--aca-gold`, `--aca-off-white`
+- Step indicator enhanced with border/glow effects for active step and ACA navy color scheme
+- All screen badges redesigned with gradient navy-to-blue rounded squares replacing plain circles
+- "Terms & Conditions" link color changed to ACA red (`#C41230`) for visual emphasis
+- Vehicle hero card on Review screen uses navy gradient background
+- Email notice card on Done screen uses left-border accent in ACA navy
+- Done screen success badge uses green gradient with box shadow
+- Confetti animation now uses ACA brand colors: navy, red, white, blue, and gold
+- Dark mode fully updated for all new design elements including hero banner, badges, and accent colors
+- Reduced whitespace and tightened spacing across all screens
+- Card shadow enhanced with navy-tinted depth shadow for visual cohesion
+- Background color changed from PrimeNG surface-ground to ACA off-white (`#f4f6f9`)
+- Responsive breakpoints refined for 4 tiers: desktop (1280px+), tablet (768px), mobile (576px), small phone (360px/320px)
+
 ### Fixed
 - Registration card not centering horizontally on wide monitors and multi-monitor setups
 - Ensured full-width propagation through the entire component hierarchy: `html`/`body` -> `app-root` -> `.app-main` -> routed components
